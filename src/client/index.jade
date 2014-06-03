@@ -17,11 +17,11 @@ html(lang='en', ng-app='flipflops')
 
 
   body
-    header
-    nav
-    content
-    sidebar
-    footer
+    header(role="banner")
+    nav(role="navigation")
+    main(role="main", content)
+    aside(role="complementary", sidebar)
+    footer(role="contentinfo")
 
     script(src="/templates.js")
     script(src="/app.js")

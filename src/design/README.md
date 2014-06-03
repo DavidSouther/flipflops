@@ -12,7 +12,8 @@ is available).
 ## Philosophy
 
 FlipFlops is a plugin system. It exposes a narrow core of CMS functionality,
-ships a suite of plugins for the common
+ships a suite of plugins for the common content scenarios (Blogs & Books), and
+allows downstream developers great flexibility in augmenting the core blocks.
 
 ### Others
 
@@ -23,9 +24,14 @@ components requires an understanding of the entire system. I want something
 smaller, and something that hits static content.
 
 * **Octopress** builds static HTML pages for each possible page. This makes
-serving easy, but advanced interactions and experienecs much more difficult.
+serving easy, but advanced interactions and experiences much more difficult. The
+layout engine is very similar to Wordpress, which breaks the fundamental rule
+of HTML: Every Opened Tag Must Close (in the same file).
 
-* **Ghost**
+* **Ghost** requires a MySQL database and Ghost account to use. It can't be
+deployed just anywhere. Multi-user is still on the horizon (in FlipFlops, as
+easy as changing the Author metadata). Plugin support is on the horizon. Not a
+SPA.
 
 ## Components
 

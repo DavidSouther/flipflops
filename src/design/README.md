@@ -43,7 +43,8 @@ server API and the rendering engine.
 Mojito is a RESTfull static CMS API server. Mojito starts from a core that
 handles loading and analyzing content on a static file system. Plugins allow
 continually enhancing this data, adding content editing and creation APIs,
-paging content, and managing authors, tags, and categories.
+paging content, and managing authors, tags, and categories. (This name has no
+relation to the Yahoo HTML5 library.)
 
 ### Daiquiri
 

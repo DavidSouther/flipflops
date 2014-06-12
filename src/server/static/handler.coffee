@@ -1,15 +1,25 @@
 Path = require "path"
-client = Path.join global.root, 'build', 'client'
-st = require('st')(client)
+root = Path.join global.root, 'src', 'client'
 
-handler = (req, res, next)->
-    if req.path.match /\.(html|css|js|map|coffee|png|svg|json|gif|ttf)$/
-        # Statically serve .{asset} files
-        st(req, res, next)
-    else if req.path.match /^\/(api|auth)/
-        next()
-    else
-        # Serve the index
-        res.sendfile Path.join client, 'index.html'
+vendors =
+    prefix: Path.join global.root, 'bower_components'
+    js: [
+        'angular/angular.js'
+        'angular-ui-router/release/angular-ui-router.js'
+        'angular-cookies/angular-cookies.js'
+        'angular-resource/angular-resource.js'
+        # 'angular-ui/build/**/*'
+        # 'bootstrap/dist/js/bootstrap.js'
+        # 'angular-bootstrap/ui-bootstrap-tpl.js'
+        # 'angular-bootstrap/ui-bootstrap.js'
+    ]
 
-module.exports = handler
+    css: [
+        'bootstrap/dist/css/*'
+        'bootstrop/dist/fonts/*'
+        'css-social-buttons/css/*'
+    ]
+
+st = require('stassets')({root, vendors})
+
+module.exports = st

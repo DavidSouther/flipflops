@@ -4,11 +4,13 @@ echo "Starting in $ROOTDIR"
 
 cd $ROOTDIR
 
-[ -d env && -f env/environment.sh ] source $ROOTDIR/env/environment.sh
+[ -d env ] && [ -f env/environment.sh ] && source $ROOTDIR/env/environment.sh
 
 if [ -x "$(which passenger)" ] ; then
     passenger start
 else
+    [ -d $ROOTDIR/run ] || mkdir $ROOTDIR/run
+
     # Check that we aren't already started
     [ -f $ROOTDIR/run/node.pid ] && {
         echo "Node already running ($(cat $ROOTDIR/run/node.pid))!"

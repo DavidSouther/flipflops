@@ -1,7 +1,9 @@
 #!/bin/sh
-ROOTDIR="$(cd "$(dirname $0)" && pwd | sed 's!/build/deploy/node!!')"
+ROOTDIR="$(cd "$(dirname $0)/../../.." && pwd)"
 
 source $ROOTDIR/env/environment.sh
+
+# Not testing for passenger, there are better ways to kill it?
 
 PIDPATH=$ROOTDIR/run/node.pid
 

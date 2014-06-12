@@ -11,3 +11,6 @@
 /snapshots
 /submissions
 /var
+newrelic_agent.log
+log/
+tmp/

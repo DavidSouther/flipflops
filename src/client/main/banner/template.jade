@@ -1,0 +1,7 @@
+header(role="banner")
+    hgroup
+        h1
+            a(ui-sref="home")
+                | {{ blog.title }}
+        h2(ng-show="blog.subtitle")
+            | {{ blog.subtitle }}

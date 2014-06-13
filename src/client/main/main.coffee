@@ -1,9 +1,8 @@
-mod = angular.module('flipflops', [
-    'ngLocale'
+angular.module('flipflops', [
     'ui.router'
-
-])
-mod.config (
+    'flipflops.blog.controller'
+    'flipflops.header.directive'
+]).config (
     $stateProvider
     $urlRouterProvider
     $locationProvider

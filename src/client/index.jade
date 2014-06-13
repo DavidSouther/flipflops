@@ -15,9 +15,8 @@ html(lang='en', ng-app='flipflops')
 
     script(src="/vendors.js")
 
-
-  body
-    header(role="banner")
+  body(ng-controller="BlogCtrl as blog")
+    ff-header(role="banner")
     nav(role="navigation")
     main(role="main", content)
     aside(role="complementary", sidebar)

@@ -1,11 +1,13 @@
 doctype html5
-html(lang='en', ng-app='flipflops')
+html(lang='en', ng-app='flipflops', ng-controller="BlogCtrl as blog")
   head
     meta(charset='utf-8')
     meta(http-equiv='X-UA-Compatible', content='IE=edge,chrome=1')
     meta(name='viewport', content='width=device-width,initial-scale=1')
 
     title Flip Flops
+
+    meta(name="author", content="{{ blog.author }}")
 
     link(rel='stylesheet', href='/vendors.css')
 
@@ -15,12 +17,17 @@ html(lang='en', ng-app='flipflops')
 
     script(src="/vendors.js")
 
-  body(ng-controller="BlogCtrl as blog")
-    ff-header(role="banner")
+  body
+    header(role="banner")
+        ff-header
     nav(role="navigation")
-    main(role="main", content)
-    aside(role="complementary", sidebar)
+        ff-nav
+    main(role="main")
+        ff-content
+    aside(role="complementary")
+        ff-sidebar
     footer(role="contentinfo")
+        ff-footer
 
     script(src="/templates.js")
     script(src="/app.js")

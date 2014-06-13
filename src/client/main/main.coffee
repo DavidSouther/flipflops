@@ -1,7 +1,7 @@
 angular.module('flipflops', [
     'ui.router'
     'flipflops.blog.controller'
-    'flipflops.header.directive'
+    'flipflops.banner.directive'
 ]).config (
     $stateProvider
     $urlRouterProvider

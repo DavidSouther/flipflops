@@ -26,8 +26,8 @@ else
 
     nohup \
     node   $ROOTDIR/node_modules/.bin/supervisor \
-        -w $ROOTDIR/build/server -e coffee \
-           $ROOTDIR/build/deploy/node/start.js \
+        -w $ROOTDIR/src/server -e coffee \
+           $ROOTDIR/app.js \
            >| $ROOTDIR/run/node.log 2>&1 </dev/null \
            &
 

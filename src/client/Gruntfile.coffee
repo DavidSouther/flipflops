@@ -5,7 +5,6 @@ module.exports = (grunt)->
     prefix = (prefix)-> (str)->"#{prefix}#{str}"
     bowerPrefix = prefix("bower_components/")
 
-
     module = name
     appFileOrdering = [
         '**/template.jade'

@@ -1,5 +1,6 @@
 Path = require "path"
 root = Path.join global.root, 'src', 'client'
+verbose = yes
 
 vendors =
     prefix: Path.join global.root, 'bower_components'
@@ -20,6 +21,6 @@ vendors =
         'css-social-buttons/css/*'
     ]
 
-st = require('stassets')({root, vendors})
+st = require('stassets')({root, vendors, verbose})
 
 module.exports = st

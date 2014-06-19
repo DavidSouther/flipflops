@@ -44,19 +44,6 @@ module.exports = (grunt)->
             all:
                 [ 'build/' ]
 
-        watch:
-            deploy:
-                # Need all files in the deploy tasks
-                # 'buildClient' and 'concat:vendors'
-                files: [
-                    grunt.Config.concat.vendorJs.src
-                    grunt.Config.concat.vendorCss.src
-                    grunt.Config.watch.client.files
-                ].reduce(((a, b)->a.concat(b)), [])
-                tasks: [ 'deploy' ]
-                options:
-                    livereload: true
-
     grunt.registerTask 'test',
         'Run all non-component tests.',
         [ 'testClient', 'testServer', 'features' ]
@@ -76,5 +63,8 @@ module.exports = (grunt)->
     grunt.registerTask 'default',
         'Perform all Prepare and Test tasks.',
         [ 'base' ]
+
+
+    grunt.loadNpmTasks 'stassets'
 
     grunt.finalize()

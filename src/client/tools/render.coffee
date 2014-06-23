@@ -20,3 +20,11 @@ if angular.mock
                 console.error err, exception
                 throw exception
         $element
+
+    window.httpBackend = angular.mock.httpBackend = (data, afterEach = ->)->
+        inject ($httpBackend)->
+            for path, val of data
+                $httpBackend.whenGET(path).respond(200, val)
+            afterEach ->
+                $httpBackend.verifyNoOutstandingExpectation()
+                $httpBackend.verifyNoOutstandingRequest()

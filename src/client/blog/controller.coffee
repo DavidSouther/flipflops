@@ -1,8 +1,8 @@
 class BlogCtrl
     constructor: ($http)->
         $http.get('/site.json')
-        .then (get)=>
-            @[k] = v for k, v of get.data.site
+        .then (response)=>
+            angular.extend @, response.data.site
 
 BlogCtrl.$inject = ['$http']
 

@@ -1,10 +1,10 @@
 class BlogCtrl
-    constructor: ->
-        @title = 'FlipFlops'
-        @subtitle = 'Quit blogging. Go to the beach.'
-        @author = 'David Souther (DEVELOPMENT)'
+    constructor: ($http)->
+        $http.get('/site.json')
+        .then (get)=>
+            @[k] = v for k, v of get.data.site
 
-BlogCtrl.$inject = []
+BlogCtrl.$inject = ['$http']
 
 angular.module('flipflops.blog.controller', [
 

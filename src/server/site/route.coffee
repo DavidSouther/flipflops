@@ -9,4 +9,4 @@ module.exports = (app)->
         if sw.matches q.path
             return sw.handle(q, s, n)
         else
-            next()
+            n()

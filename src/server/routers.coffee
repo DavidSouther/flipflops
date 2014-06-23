@@ -1,5 +1,6 @@
 routers = (app)->
     [
+        'site'
     ].forEach (api)->
         require("./#{api}/route")(app)
 

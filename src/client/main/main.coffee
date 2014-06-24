@@ -6,16 +6,12 @@ angular.module('flipflops', [
     'flipflops.content.directive'
     'flipflops.sidebar.directive'
     'flipflops.footer.directive'
+
+    'flipflops.content'
 ]).config (
     $stateProvider
     $urlRouterProvider
     $locationProvider
 )->
     $locationProvider.html5Mode true
-    $urlRouterProvider.otherwise('/');
-    $stateProvider
-    .state 'home',
-        url: '/'
-    .state 'blog',
-        url: '/{blogPath:20[01][0-9]*}'
-        
+    $urlRouterProvider.otherwise '/'

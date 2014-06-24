@@ -2,6 +2,7 @@ class Site
     constructor: (promise)->
         promise.then (response)=>
             angular.extend @, response.data.site
+            @files = angular.extend {}, response.data.files
 
 angular.module('flipflops.site', [
 

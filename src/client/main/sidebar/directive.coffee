@@ -4,3 +4,6 @@ angular.module('flipflops.sidebar.directive', [
     restrict: 'E'
     replace: true
     templateUrl: 'main/sidebar'
+    controller: ($scope, $state, $stateParams)->
+        $scope.$state = $state
+        $scope.$stateParams = $stateParams

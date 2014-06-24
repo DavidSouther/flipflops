@@ -10,5 +10,7 @@ describe 'Site', ->
             $scope = $rootScope.$new()
             $controller 'Site', {$scope}
             $httpBackend.flush()
-            $scope.site.title.should.equal 'FlipFlops', 'Title'
-            $scope.site.author.should.equal 'David Souther (DEVELOPMENT)', 'Author'
+
+            site = $scope.site
+            site.title.should.equal 'FlipFlops', 'Title'
+            site.author.should.equal 'David Souther (DEVELOPMENT)', 'Author'

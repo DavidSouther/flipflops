@@ -13,7 +13,7 @@ describe "Server", ->
             .expect(200)
             .end done
 
-        it "ncludes settings from the fs", (done)->
+        it "includes settings from the fs", (done)->
             request.get('/site.json')
             .end (err, res)->
                 done(err) if err

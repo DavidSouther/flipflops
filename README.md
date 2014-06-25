@@ -5,9 +5,9 @@
 Take a little syntax out of your life. It's just a file system and your words.
 
 ## Running a static blog
-
-1. Create a folder for your project. Put it in source control, if you want.
-1. Copy `[config.js][config.js]` to your project.
+1. `git clone` flipflops
+1. Create a folder for your project. Put it in source control, if you want. This folder is outside of the flipflops repo and is completely separate.
+1. Copy [config.js](https://github.com/DavidSouther/flipflops/blob/master/src/site/config.js) from flipflops repo to your project.
 1. Change the few settings to your name, blog title, etc.
 1. Create a folder, `posts`. This folder has all your blog posts, distinct from
     pages in the site.

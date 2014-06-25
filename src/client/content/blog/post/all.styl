@@ -1,0 +1,20 @@
+.Content
+    article
+        header
+            p
+                &:before
+                    font-style italic
+                    color grey
+
+            ._publish-date
+                color grey
+                float right
+                margin 0
+
+                &:before
+                    content 'Posted: '
+                    font-style italic
+
+            ._author
+                &:before
+                    content: 'By: ';

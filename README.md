@@ -16,16 +16,16 @@ Take a little syntax out of your life. It's just a file system and your words.
 1. To create a post, create a folder and `index.md` as
     `YYY/MM/DD/post-slug/index.md`
 1. To configure the post, create a YAML header. Current frontmatter supported is
-    ```
-    ---
-    title: Post Title
-    date: 2014-06-25T15:31:00.000-0500
-    author: Post Author (default's to author in config::site.author)
-    categories:
-      - Category
-      - Other
-    ---
-    ```
+```
+---
+title: Post Title
+date: 2014-06-25T15:31:00.000-0500
+author: Post Author (default's to author in config::site.author)
+categories:
+  - Category
+  - Other
+---
+```
 
 Once that's in place, you're ready to start flipflops. From the flipflops folder
 run `CONFIG_FILE=/Users/username/full/path/to/project/config.js node app.js`

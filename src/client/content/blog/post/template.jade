@@ -8,3 +8,13 @@ article
             span(ng-repeat="cat in front.categories")&nbsp;{{ cat }}
 
     div(ng-bind-html="content")
+
+    footer
+        a._previous(
+            href="{{ previous.path }}"
+            ng-show="previous"
+        ) Previous
+        a._next(
+            href="{{ next.path }}"
+            ng-show="next"
+        ) Next

@@ -1,1 +1,6 @@
-h3 List
+div.PostList
+    h2 Posts List
+    section(ng-repeat="post in site.posts | orderBy:post.front.date:desc")
+        h3
+            a(href="{{post.path}}") {{ post.front.title }}
+            time {{ post.front.date | date:short }}

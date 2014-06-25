@@ -5,5 +5,6 @@ angular.module('flipflops.content.blog.post.controller', [
 ]).controller 'BlogPostCtrl', ($scope, Site, $stateParams, Renderer, $sce)->
     $scope.content = ''
     file = "/posts/#{$stateParams.blogPath}"
-    Renderer.render(Site.files[file]).then (content)->
-        $scope.content = $sce.trustAsHtml content
+    Site.loaded.then ->
+        Renderer.render(Site.files[file]).then (content)->
+            $scope.content = $sce.trustAsHtml content

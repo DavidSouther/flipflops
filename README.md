@@ -4,6 +4,36 @@
 
 Take a little syntax out of your life. It's just a file system and your words.
 
+## Running a static blog
+
+1. Create a folder for your project. Put it in source control, if you want.
+1. Copy `[config.js][config.js]` to your project.
+1. Change the few settings to your name, blog title, etc.
+1. Create a folder, `posts`. This folder has all your blog posts, distinct from
+    pages in the site.
+1. Inside posts, create folders for YYYY/MM/DD/ for each blog post. Every post
+    must be in a folder meeting that structure.
+1. To create a post, create a folder and `index.md` as
+    `YYY/MM/DD/post-slug/index.md`
+1. To configure the post, create a YAML header. Current frontmatter supported is
+    ```
+    ---
+    title: Post Title
+    date: 2014-06-25T15:31:00.000-0500
+    author: Post Author (default's to author in config::site.author)
+    categories:
+      - Category
+      - Other
+    ---
+    ```
+
+Once that's in place, you're ready to start flipflops. From the flipflops folder
+run `CONFIG_FILE=/Users/username/full/path/to/project/config.js node app.js`
+
+Visit [http://localhost:1024/](http://localhost:1024/)
+
+[config.js]: ./src/site/config.js
+
 ## Hacking
 
 If you do happen to like hacking on the beach, check out our
@@ -26,7 +56,6 @@ otherwise. The docker container uses supervisor, but that's under the hood.
 
 [passenger]:
 [supervisor]:
-
 
 ### Configuring the environment
 

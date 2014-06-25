@@ -34,7 +34,7 @@ describe "Server", ->
             .expect('content-type', /text\/css/)
             .end done
 
-    describe.skip "html5", ->
+    describe "html5", ->
         it "returns index on any request to non-asset.", (done)->
             request.get('/deep/link')
             .expect(200)

@@ -4,5 +4,3 @@ describe 'Scavenger Main', ->
     it 'should load a module', inject ($state)->
         # state.includes('')
         should.exist $state
-        console.log $state
-        debugger

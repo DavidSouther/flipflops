@@ -9,6 +9,8 @@ vendors =
         'angular-ui-router/release/angular-ui-router.js'
         'angular-cookies/angular-cookies.js'
         'angular-resource/angular-resource.js'
+        'angular-sanitize/angular-sanitize.js'
+        'marked/lib/marked.js'
         # 'angular-ui/build/**/*'
         # 'bootstrap/dist/js/bootstrap.js'
         # 'angular-bootstrap/ui-bootstrap-tpl.js'

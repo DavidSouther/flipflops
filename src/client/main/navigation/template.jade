@@ -2,5 +2,6 @@
     ul
         li
             a(ui-sref="blog.list") All Posts
-        li(ng-repeat="(path, content) in site.files")
-            a(href="{{path}}") {{path}}
+            ul
+                li(ng-repeat="(path, content) in site.files")
+                    a(href="{{path}}") {{path}}

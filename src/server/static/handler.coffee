@@ -18,9 +18,9 @@ vendors =
     ]
 
     css: [
-        'bootstrap/dist/css/*'
-        'bootstrop/dist/fonts/*'
-        'css-social-buttons/css/*'
+        # 'bootstrap/dist/css/*'
+        # 'bootstrop/dist/fonts/*'
+        # 'css-social-buttons/css/*'
     ]
 
 st = require('stassets')({

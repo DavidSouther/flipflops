@@ -20,13 +20,13 @@ html(lang='en', ng-app='flipflops', ng-controller="Site")
   body
     header(role="banner")
         ff-header
-    nav(role="navigation")
-        ff-navigation
     main(role="main")
-        //- ff-content
-        ui-view
-    aside(role="complementary")
-        ff-sidebar
+        section.Content
+            ui-view
+        nav(role="navigation")
+            ff-navigation
+        aside(role="complementary")
+            ff-sidebar
     footer(role="contentinfo")
         ff-footer
 

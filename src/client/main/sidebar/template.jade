@@ -1,11 +1,13 @@
 .Sidebar
-    h3 $state.$current
-    dl
-        dt name
-        dd
-            pre {{$state.$current.name}}
-        dt url
-        dd
-            pre {{$state.$current.url.source}}
-    h3 $stateParams
+    section
+        h3 $state.$current
+        dl
+            dt name
+            dd
+                pre {{$state.$current.name}}
+            dt url
+            dd
+                pre {{$state.$current.url.source}}
+    section
+        h3 $stateParams
         pre {{ $stateParams }}

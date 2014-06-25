@@ -1,4 +1,5 @@
-{
+module.exports = {
+    "source": __dirname,
     "site": {
         "title": "FlipFlops",
         "subtitle": "Quit blogging. Go to the beach.",

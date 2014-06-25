@@ -24,6 +24,7 @@ class SiteWatcher extends AssetWatcher
         files = {}
         copyAll = (obj, _)->
             obj[path] = file for own path, file of _
+            obj
         _.reduce copyAll, files
 
         site: @config.site

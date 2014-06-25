@@ -1,2 +1,10 @@
-h3 Post
-div(ng-bind-html="content")
+article
+    header
+        h3 {{front.title}}
+        p Published:&nbsp;
+            time {{ front.date | date:medium }}
+        p Author:&nbsp;{{ front.author }}
+        p Categories:
+            span(ng-repeat="cat in front.categories")&nbsp;{{ cat }}
+
+    div(ng-bind-html="content")

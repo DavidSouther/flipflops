@@ -11,9 +11,10 @@
 ### Daiquiri
 
 * [X] Loads content tree from Mojito.
-* [ ] Renders nav and routes paths.
-* [ ] Renders article markdown.
+* [X] Renders nav and routes paths.
+* [X] Renders article markdown.
 * [ ] Renders article listings (eg blog home page).
+* [ ] Renders and navigates static pages.
 
 ## Plugin Basics
 

@@ -9,6 +9,7 @@ winston = logging.log
 express = require "express"
 
 app = express()
+.use(require('./rewrite/rewriter'))
 .use(express.cookieParser())
 .use(require('body-parser').json())
 .use(logging.middleware)

@@ -70,6 +70,7 @@
 * [ ] CRUD Pages
 * [ ] CRUD Posts
 * [ ] Manage Assets
+* [ ] Wordpress Import
 
 ## Marketing
 

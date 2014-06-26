@@ -16,7 +16,8 @@ class Site
         @pages = @index.pages.reduce ((a, f)=> a.push(@files[f]) ; a), []
 
     link: (file)->
-        file.replace('/pages/', '')
+        (file or '').replace('/pages/', '')
+            .replace('/posts/', '')
             .replace('index.md', '')
             .replace('index.markdown', '')
 

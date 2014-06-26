@@ -6,16 +6,16 @@ angular.module('flipflops.content.blog.post.controller', [
     $scope.content = ''
     path = "/posts/#{$stateParams.blogPath}"
     Site.loaded.then ->
-        file = Site.files[path]
+        file = Site.find path
         $scope.front = file.front
         file.front.date = new Date file.front.date
 
-        links()
+        link file
 
         Renderer.render(file.body).then (content)->
             $scope.content = $sce.trustAsHtml content
 
-    links = ->
+    link = (file)->
         index = Site.index.posts.indexOf file.path
         if index > 0
             $scope.previous = Site.files[Site.index.posts[index - 1]]

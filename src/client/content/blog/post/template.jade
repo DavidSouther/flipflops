@@ -11,10 +11,10 @@ article
 
     footer
         a._previous(
-            href="{{ previous.path }}"
+            ui-sref="blog.post({blogPath: site.link(previous.path)})"
             ng-show="previous"
         ) Previous
         a._next(
-            href="{{ next.path }}"
+            ui-sref="blog.post({blogPath: site.link(next.path)})"
             ng-show="next"
         ) Next

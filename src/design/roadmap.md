@@ -63,3 +63,10 @@
 * [ ] Sidebar Plugins - stack overflow? Github?
 * [ ] Ads plugins - google adwords.
 * [ ] Social plugins - twitter, facebook, g+
+
+## Content Management
+
+* [ ] Secure Login
+* [ ] CRUD Pages
+* [ ] CRUD Posts
+* [ ] Manage Assets

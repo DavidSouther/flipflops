@@ -18,11 +18,11 @@
 
 ### Helpers
 
-* [ ] flipflops serve [configpath]
-* [ ] flipflops render [configpath] <outdir>
-* [ ] flipflops create post <title> [configpath]
-* [ ] flipflops init [configpath]
-* [ ] npm install --global flipflops
+* [ ] `flipflops serve [configpath]`
+* [ ] `flipflops render [configpath] <outdir>`
+* [ ] `flipflops create post <title> [configpath]`
+* [ ] `flipflops init [configpath]`
+* [ ] `npm install --global flipflops`
 
 ## Plugin Basics
 

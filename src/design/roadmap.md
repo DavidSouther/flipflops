@@ -16,7 +16,7 @@
 * [X] Renders article listings (blog posts page).
 * [X] Renders and navigates static pages.
 
-### Helpers
+## Helpers
 
 * [ ] `flipflops serve [configpath]`
 * [ ] `flipflops render [configpath] <outdir>`

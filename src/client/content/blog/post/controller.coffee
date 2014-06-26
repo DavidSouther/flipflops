@@ -4,9 +4,9 @@ angular.module('flipflops.content.blog.post.controller', [
     'flipflops.renderer'
 ]).controller 'BlogPostCtrl', ($scope, Site, $stateParams, Renderer, $sce)->
     $scope.content = ''
-    file = "/posts/#{$stateParams.blogPath}"
+    path = "/posts/#{$stateParams.blogPath}"
     Site.loaded.then ->
-        file = Site.files[file]
+        file = Site.files[path]
         $scope.front = file.front
         file.front.date = new Date file.front.date
 

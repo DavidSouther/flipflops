@@ -2,3 +2,7 @@
     ul
         li
             a(ui-sref="blog.list") All Posts
+        li(ng-repeat="path in site.index.pages")
+            a(
+                ui-sref="page({pagePath:site.link(path)})"
+            ) {{ site.files[path].front.title }}

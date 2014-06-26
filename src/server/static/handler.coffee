@@ -1,9 +1,7 @@
 config = require process.env.CONFIG_FILE or '../../site/config'
 
-console.log 'Path is', "#{config.source}/assets"
+st = require 'st'
 
-module.exports = require('st')({
-    path: "#{config.source}/assets"
-    url: '/assets'
-    passthrough: yes
-})
+module.exports = (app)->
+    app.use st({ path: "#{config.source}/assets", url: '/assets' })
+    app.use st({ path: "#{config.source}/pages", url: '/' })

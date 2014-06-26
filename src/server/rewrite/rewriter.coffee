@@ -1,5 +1,5 @@
 rewriter = (req, res, next) ->
-    req.app.routes.get.forEach (item)->
+    req.app.routes.get?.forEach (item)->
         if item.match req.url
             item.callbacks.forEach (callback) ->
                 if callback and callback.rewriteTarget

@@ -26,10 +26,9 @@ if process.env.NODE_ENV is 'development'
 
 app
 # .use(require('./auth/authenticate').userHandler())
-.use(require("./static/handler"))
 .use(require("./stassets/handler"))
-
 require('./routers')(app)
+require("./static/handler")(app)
 
 module.exports =
     server: null

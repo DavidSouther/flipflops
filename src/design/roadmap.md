@@ -13,8 +13,16 @@
 * [X] Loads content tree from Mojito.
 * [X] Renders nav and routes paths.
 * [X] Renders article markdown.
-* [ ] Renders article listings (eg blog home page).
-* [ ] Renders and navigates static pages.
+* [X] Renders article listings (blog posts page).
+* [X] Renders and navigates static pages.
+
+### Helpers
+
+* [ ] flipflops serve [configpath]
+* [ ] flipflops render [configpath] <outdir>
+* [ ] flipflops create post <title> [configpath]
+* [ ] flipflops init [configpath]
+* [ ] npm install --global flipflops
 
 ## Plugin Basics
 
@@ -42,6 +50,7 @@
 * [ ] Markdown plugin - pull article rendering to a plugin.
 * [ ] Jade rendering - allow content to be rendered as jade.
 * [ ] Code rendering - Render code blocks.
+* [ ] Gist Embedding
 
 ## Advanced Plugins
 

@@ -7,7 +7,7 @@ angular.module('flipflops.renderer', [
         tables: true
         breaks: no
         pedantic: no
-        sanitize: yes
+        sanitize: no # Possibly dangerous, especially with comments.
         smartLists: yes
         smartypants: no
 

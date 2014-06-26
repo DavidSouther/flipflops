@@ -25,8 +25,9 @@ if process.env.NODE_ENV is 'development'
         next()
 
 app
-.use(require("./static/handler"))
 # .use(require('./auth/authenticate').userHandler())
+.use(require("./static/handler"))
+.use(require("./stassets/handler"))
 
 require('./routers')(app)
 

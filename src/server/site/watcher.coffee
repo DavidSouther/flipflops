@@ -40,6 +40,7 @@ class SiteWatcher extends AssetWatcher
         catch err
             console.warn "YAMLException, returning string"
             console.warn err
+        front = front or {}
         front.path = path
         {front, body}
 

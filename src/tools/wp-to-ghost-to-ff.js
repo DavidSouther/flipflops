@@ -1,6 +1,13 @@
 var fs = require('graceful-fs');
 var mkdirp = require('mkdirp');
 
+/*
+TO USE, EDIT THE CONFIG VARS BELOW
+TODO: MAKE CONFIG VARS PARAMETERS
+NOTE: This is a WIP.
+Ideally, we will write our own WP exporter that will export all the things (authors, tags, etc).
+*/
+
 // CONFIG:
 var ghostExport = 'ghost-export.json';
 var author = 'Your Name';

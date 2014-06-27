@@ -3,9 +3,10 @@ yaml = require 'js-yaml'
 
 class SiteWatcher extends AssetWatcher
     constructor: (@config)->
-        @config.source = require('path').normalize(
+        @config.root = @config.source = require('path').normalize(
             @config.source or "#{__dirname}/../../site"
         )
+
         @config.moreSep = '<!-- more -->'
 
         site = @config.site = @config.site or {}
@@ -14,8 +15,8 @@ class SiteWatcher extends AssetWatcher
         site.author = site.author or "#{site.title} Admin"
 
         @pattern = [
-            "#{@config.source}/**/index.markdown"
-            "#{@config.source}/**/index.md"
+            "**/index.markdown"
+            "**/index.md"
         ]
         super()
 

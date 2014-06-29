@@ -28,7 +28,6 @@ app
 # .use(require('./auth/authenticate').userHandler())
 .use(require("./stassets/handler"))
 require('./routers')(app)
-require("./static/handler")(app)
 
 module.exports =
     server: null

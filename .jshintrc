@@ -11,10 +11,8 @@
   "unused": true,
   "latedef": true,
   "globals": {
-    "require": true,
-    "_": true,
-    "d3": true,
-    "nv": true,
-    "angular": true
+    "angular": true,
+    "__dirname": true,
+    "module": true
   }
 }

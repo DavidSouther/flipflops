@@ -1,7 +1,6 @@
 Path = require "path"
 root = Path.join global.root, 'src', 'client'
 
-
 vendors =
     prefix: Path.join global.root, 'bower_components'
     js: [
@@ -26,8 +25,8 @@ vendors =
 st = require('stassets')({
     root
     vendors
-    verbose: yes
-    deeplink: no 
+    verbose: no
+    deeplink: no
 })
 
 module.exports = st

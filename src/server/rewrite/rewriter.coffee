@@ -4,7 +4,10 @@ rewriter = (req, res, next) ->
             item.callbacks.forEach (callback) ->
                 if callback and callback.rewriteTarget
                     req.urlRewritten = req.url
-                    req.url = req.url.replace(item.regexp, callback.rewriteTarget)
+                    req.url = req.url.replace(
+                        item.regexp
+                        callback.rewriteTarget
+                    )
                     console.log "Rewrote #{req.urlRewritten} to #{req.url}"
                 return
 

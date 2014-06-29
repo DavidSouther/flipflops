@@ -5,7 +5,7 @@ article
             time {{ front.date | date:medium }}
         p._author {{ front.author }}
         p Categories:
-            span(ng-repeat="cat in front.categories")&nbsp;{{ cat }}
+            span(ng-repeat="cat in front.categories") &nbsp;{{ cat }}
 
     div(ng-bind-html="content")
 

@@ -5,11 +5,11 @@ app = require('express')()
 # TODO This depends on a successful build
 app
 .use(require('./rewriter'))
-.use(require('../static/route'))
-require('./handler')(app)
+require('./route')(app)
+app.use(require('../stassets/handler'))
 request = require('supertest')(app)
 
-describe "Server", ->
+describe.only "Server", ->
     describe "html5", ->
         it "returns index on any request to non-asset.", (done)->
             request.get('/deep/link/')

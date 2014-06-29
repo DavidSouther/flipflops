@@ -30,18 +30,18 @@ class SiteWatcher extends AssetWatcher
         obj
 
     parseFile: (_, path)->
-        front = {}; middle = 0
+        middle = 0
         if _.indexOf '---\n' is 0
             middle = _.indexOf '---\n', 4
             front = _.substr 4, middle - 4 # middle is the length
         middle += 5 if middle > 0
         body = _.substr middle
-        try
-            front = yaml.safeLoad(front)
+        front = try
+            yaml.safeLoad(front)
         catch err
-            console.warn "YAMLException, returning string"
-            console.warn err
-        front = front or {}
+            {}
+            # console.warn "YAMLException, trying frontmatter defaults."
+            # console.warn err
         front.path = path
         {front, body}
 
@@ -59,7 +59,8 @@ class SiteWatcher extends AssetWatcher
         _
 
     parseTitle: (path)->
-        sep = '#'
+        sep = '/'
+        prefixLen = 1
         index = path.indexOf '/index.m'
         if path.indexOf '/posts/' is 0
             # Assume /posts/YYYY/mm/dd/title-with-hyphens/index.md

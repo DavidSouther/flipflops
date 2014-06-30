@@ -1,4 +1,5 @@
 Path = require "path"
+config = require '../config'
 root = Path.join global.root, 'src', 'client'
 
 vendors =
@@ -6,8 +7,8 @@ vendors =
     js: [
         'angular/angular.js'
         'angular-ui-router/release/angular-ui-router.js'
-        'angular-cookies/angular-cookies.js'
-        'angular-resource/angular-resource.js'
+        # 'angular-cookies/angular-cookies.js'
+        # 'angular-resource/angular-resource.js'
         'angular-sanitize/angular-sanitize.js'
         'marked/lib/marked.js'
         # 'angular-ui/build/**/*'
@@ -25,8 +26,7 @@ vendors =
 st = require('stassets')({
     root
     vendors
-    verbose: no
-    deeplink: no
+    verbose: config.verbose or no
 })
 
 module.exports = st

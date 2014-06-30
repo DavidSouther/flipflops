@@ -1,6 +1,6 @@
 SiteWatcher = require './watcher'
 
-config = require process.env.CONFIG_FILE or '../../site/config'
+config = require '../config'
 
 module.exports = (app)->
     sw = new SiteWatcher config

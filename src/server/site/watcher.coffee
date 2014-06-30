@@ -14,11 +14,14 @@ class SiteWatcher extends AssetWatcher
         site.subtitle = site.subtitle or 'Go to the beach.'
         site.author = site.author or "#{site.title} Admin"
 
-        @pattern = [
+
+        super()
+
+    pattern: ->
+        [
             "**/index.markdown"
             "**/index.md"
         ]
-        super()
 
     matches: (path)-> path in ['/site.json']
     type: -> "application/json"

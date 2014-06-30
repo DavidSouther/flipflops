@@ -15,7 +15,7 @@ var author = 'Your Name';
 var postsArr;
 var fullData = fs.readFileSync(ghostExport, 'utf8');
 
-fullData = JSON.parse(fullData)
+fullData = JSON.parse(fullData);
 postsArr = fullData.data.posts;
 
 postsArr.forEach(function(e) {

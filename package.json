@@ -2,6 +2,9 @@
   "name": "flipflops",
   "version": "0.0.0",
   "description": "Flip Flops: Quite blogging, go to the beach.",
+  "bin": {
+    "flipflops": "./src/cli/flipflops.js"
+  },
   "scripts": {
     "postinstall": "node ./node_modules/.bin/bower update --force --config.interactive=0",
     "test": "node ./node_modules/.bin/grunt test",

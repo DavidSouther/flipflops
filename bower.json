@@ -20,8 +20,5 @@
     "angular-ui-router": "~0.2.10",
     "angular-sanitize": "~1.2.18",
     "marked": "~0.3.2"
-  },
-  "resolutions": {
-    "angular": "~1.2.15"
   }
 }

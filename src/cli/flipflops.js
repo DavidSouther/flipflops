@@ -44,6 +44,10 @@ switch(command){
         console.log('Starting server...');
         require('../server/server').start();
         break;
+    case 'render':
+        console.log('Rendering content...');
+        require('./render')(process.argv.pop());
+        break;
     default:
         throw new Error('Invalid command: ' + command);
 }

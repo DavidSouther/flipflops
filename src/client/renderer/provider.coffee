@@ -10,6 +10,21 @@ angular.module('flipflops.renderer', [
         sanitize: no # Possibly dangerous, especially with comments.
         smartLists: yes
         smartypants: no
+        highlight: (code, language)->
+            if language
+                hljs.highlight(language, code).value
+            else
+                hljs.highlightAuto(code).value
+
+    @defineLanguage = (name, lang) -> hljs.registerLanguage name, -> lang
+    @registerLanguage = hljs.registerLanguage
+
+    treeLang = ->
+        contains: [
+            hljs.HASH_COMMENT_MODE
+        ]
+
+    @registerLanguage 'tree', treeLang
 
     @updateOptions = (opts)->
         options = angular.extend options, opts
@@ -18,10 +33,7 @@ angular.module('flipflops.renderer', [
         options.renderer = new options.renderer()
         marked.setOptions options
         render: (src)->
-            defer = $q.defer()
-            content = marked src
-            defer.resolve content
-            defer.promise
+            $q.when marked src
 
     Renderer.$inject = ['$q']
 

@@ -11,6 +11,7 @@ vendors =
         # 'angular-resource/angular-resource.js'
         'angular-sanitize/angular-sanitize.js'
         'marked/lib/marked.js'
+        'highlightjs/highlight.pack.js'
         # 'angular-ui/build/**/*'
         # 'bootstrap/dist/js/bootstrap.js'
         # 'angular-bootstrap/ui-bootstrap-tpl.js'
@@ -22,6 +23,7 @@ vendors =
         # 'bootstrop/dist/fonts/*.css'
         # 'css-social-buttons/css/*.css'
         # '!**/*.min.css'
+        'highlightjs/styles/tomorrow.css'
     ]
 
 st = require('stassets')({

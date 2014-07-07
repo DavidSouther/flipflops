@@ -19,6 +19,7 @@
     "css-social-buttons": "https://github.com/samcollins/css-social-buttons.git",
     "angular-ui-router": "~0.2.10",
     "angular-sanitize": "~1.2.18",
-    "marked": "~0.3.2"
+    "marked": "~0.3.2",
+    "highlightjs": "~8.0.0"
   }
 }

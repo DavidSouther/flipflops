@@ -6,20 +6,31 @@ class Site
             @buildIndex()
             @
 
-    indexOrder = (a, b)->
-        depth_a = a.split('/').length
-        depth_b = b.split('/').length
-        if depth_a < depth_b
+    indexArrayOrder = (a, b)->
+        # Base cases, either is empty
+        if a.length is 0 and b.length is 0
+            return 0
+        if a.length is 0 and b.length > 0
             return -1
-        else if depth_b < depth_a
+        if a.length > 0 and b.length is 0
             return 1
-        else
-            if a < b
-                return -1
-            else if b < a
-                return 1
-            else
-                return 0
+
+        # index cases, return least at index (lexicographical)
+        if a[0] < b[0]
+            return -1
+        if a[0] > b[0]
+            return 1
+        if a[0] is b[0]
+            return indexArrayOrder a.slice(1), b.slice(1)
+
+        throw new Exception "Unsupported boolean magic in indexArrayOrder."
+
+    indexOrder = (a, b)->
+        indexArrayOrder(
+            # Ignore the trailing index.
+            a.replace(/\/index\.m(d|arkdown)/, '').split('/')
+            b.replace(/\/index\.m(d|arkdown)/, '').split('/')
+        )
 
     buildIndex: ->
         angular.forEach @files, (file, path)-> file.path = path
@@ -27,8 +38,8 @@ class Site
             files: Object.keys(@files)
             posts: Object.keys(@files).filter((_)->_.indexOf('/posts/') is 0)
             pages: Object.keys(@files).filter((_)->_.indexOf('/pages/') is 0)
-        # @index.posts.sort indexOrder
-        # @index.pages.sort indexOrder
+        @index.posts.sort indexOrder
+        @index.pages.sort indexOrder
         @index.chapters = @index.pages.filter (path)->
             path.split('/').length <= (3 + 1) # /pages/... for 3
         @posts = @index.posts.reduce ((a, f)=> a.push(@files[f]) ; a), []

@@ -49,8 +49,8 @@ switch(command){
         require('./render')(process.argv.pop());
         break;
     case 'init':
-        console.log("Initializing site...");
-        require('./init')()
+        console.log('Initializing site...');
+        require('./init')();
         break;
     default:
         throw new Error('Invalid command: ' + command);

@@ -34,7 +34,8 @@ class SiteWatcher extends AssetWatcher
 
     parseFile: (_, path)->
         middle = 0
-        if _.indexOf '---\n' is 0
+        front = ''
+        if _.indexOf('---\n') is 0
             middle = _.indexOf '---\n', 4
             front = _.substr 4, middle - 4 # middle is the length
         middle += 5 if middle > 0
@@ -45,6 +46,7 @@ class SiteWatcher extends AssetWatcher
             {}
             # console.warn "YAMLException, trying frontmatter defaults."
             # console.warn err
+        front or= {} # YAML of '' is null
         front.path = path
         {front, body}
 
@@ -65,15 +67,15 @@ class SiteWatcher extends AssetWatcher
         sep = '/'
         prefixLen = 1
         index = path.indexOf '/index.m'
-        if path.indexOf '/posts/' is 0
+        if path.indexOf('/posts/') is 0
             # Assume /posts/YYYY/mm/dd/title-with-hyphens/index.md
             prefixLen = '/posts/YYYY/mm/dd/'.length
             sep = '-'
-        else if path.indexOf '/pages/' is 0
+        else if path.indexOf('/pages/') is 0
             # Assume /pages/title/as/path/index.md
             prefixLen = '/pages/'.length
             sep = '/'
-        path.substr(prefixLen, index - prefixLen).replace sep, ''
+        path.substr(prefixLen, index - prefixLen).replace(sep, '') or 'Home'
 
     concat: (_)->
         files = {}

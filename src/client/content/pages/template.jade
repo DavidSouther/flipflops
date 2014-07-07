@@ -3,3 +3,13 @@ article
         h2 {{front.title}}
 
     div(ng-bind-html="content")
+
+    footer
+        a._previous(
+            ui-sref="page({pagePath: site.link(previous.path)})"
+            ng-show="previous"
+        ) Previous
+        a._next(
+            ui-sref="page({pagePath: site.link(next.path)})"
+            ng-show="next"
+        ) Next

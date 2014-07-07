@@ -1,8 +1,8 @@
 .Navigation
     ul
-        li
+        li(ng-show="blog.list.length > 0")
             a(ui-sref="blog.list") All Posts
-        li(ng-repeat="path in site.index.pages")
+        li(ng-repeat="path in site.index.chapters")
             a(
                 ui-sref="page({pagePath:site.link(path)})"
             ) {{ site.files[path].front.title }}

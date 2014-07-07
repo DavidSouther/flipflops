@@ -6,5 +6,4 @@ angular.module('flipflops.navigation.directive', [
     templateUrl: 'main/navigation'
     controller: ($scope)->
         $scope.isPost = (_)->
-            console.log arguments
             _.indexOf('/posts/') is 0

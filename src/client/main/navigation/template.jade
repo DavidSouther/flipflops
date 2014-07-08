@@ -1,6 +1,6 @@
 .Navigation
     ul
-        li(ng-show="blog.list.length > 0")
+        li(ng-show="site.posts.length > 0")
             a(ui-sref="blog.list") All Posts
         li(ng-repeat="path in site.index.chapters")
             a(

@@ -59,6 +59,8 @@ class Site
             null
 
     find: (path)->
+        if path is '/README.md' and @files[path]?
+            return @files[path]
         if path.indexOf('/posts/') isnt 0
             path = "/pages/#{path}"
         @findNoIndex path

@@ -3,9 +3,14 @@ section.Content
     text-align justify
     perspective 10000
     overflow hidden
+    border-radius 15px
 
     ui-view
         display block
+        height 100%
+        width 100%
+        opacity 1
+        background #FFFFFE
         transform-origin left top
         transform-style preserve-3d
 
@@ -14,7 +19,9 @@ section.Content
             top 0
             transition 0.6s
             height 100%
-            background #FFFFFE
 
         &.ng-leave-active
             transform rotateX(30deg) rotateY(-115deg)
+
+        article
+            height 100%

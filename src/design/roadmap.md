@@ -15,14 +15,15 @@
 * [X] Renders article markdown.
 * [X] Renders article listings (blog posts page).
 * [X] Renders and navigates static pages.
+* [X] Renders readme.md for a home page.
 
 ## Helpers
 
-* [ ] `flipflops serve [configpath]`
-* [ ] `flipflops render [configpath] <outdir>`
+* [X] `flipflops serve [configpath]`
+* [X] `flipflops render [configpath] <outdir>`
 * [ ] `flipflops create post <title> [configpath]`
-* [ ] `flipflops init [configpath]`
-* [ ] `npm install --global flipflops`
+* [X] `flipflops init [configpath]`
+* [X] `npm install --global flipflops`
 
 ## Plugin Basics
 
@@ -35,7 +36,9 @@
 ### Daiquiri
 
 * [ ] Loads additional modules at run time.
-* [ ] Additional modules override & wrap directives.
+* [ ] Modules wrap factories (`angular.decorator()`).
+* [ ] Modules replace templates.
+* [ ] Modules override CSS.
 
 ## Basic Plugins
 
@@ -48,8 +51,8 @@
 * [ ] Analytics plugin - google analytics
 * [ ] Navigation Plugin - highly configurable and extensible menu.
 * [ ] Markdown plugin - pull article rendering to a plugin.
-* [ ] Jade rendering - allow content to be rendered as jade.
 * [ ] Code rendering - Render code blocks.
+* [ ] Jade rendering - allow content to be rendered as jade.
 * [ ] Gist Embedding
 
 ## Advanced Plugins
@@ -60,7 +63,7 @@
 
 ### Daiquiri
 
-* [ ] Sidebar Plugins - stack overflow? Github?
+* [ ] Sidebar Plugins - stack overflow, Github
 * [ ] Ads plugins - google adwords.
 * [ ] Social plugins - twitter, facebook, g+
 

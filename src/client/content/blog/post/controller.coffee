@@ -2,7 +2,7 @@ angular.module('flipflops.content.blog.post.controller', [
     'ui.router'
     'flipflops.site'
     'flipflops.renderer'
-]).controller 'BlogPostCtrl', ($scope, Site, $stateParams, Renderer, $sce)->
+]).controller 'BlogPostCtrl', ($scope, Site, $stateParams, Renderer, $sce, $state)->
     $scope.content = ''
     path = "/posts/#{$stateParams.blogPath}"
     Site.loaded.then ->
@@ -14,6 +14,16 @@ angular.module('flipflops.content.blog.post.controller', [
 
         Renderer.render(file.body).then (content)->
             $scope.content = $sce.trustAsHtml content
+
+        $scope.$on 'NEXT!', ->
+            if $scope.next
+                console.log "Going to the next page."
+                $state.go 'blog.post',
+                    pagePath: Site.link $scope.next.path
+        $scope.$on 'PREVIOUS!', ->
+            if $scope.previous
+                $state.go 'blog.post',
+                    pagePath: Site.link $scope.previous.path
 
     link = (file)->
         index = Site.index.posts.indexOf file.path

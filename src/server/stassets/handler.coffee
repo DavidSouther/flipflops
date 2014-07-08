@@ -10,6 +10,7 @@ vendors =
         # 'angular-cookies/angular-cookies.js'
         # 'angular-resource/angular-resource.js'
         'angular-sanitize/angular-sanitize.js'
+        'angular-animate/angular-animate.js'
         'marked/lib/marked.js'
         'highlightjs/highlight.pack.js'
         # 'angular-ui/build/**/*'

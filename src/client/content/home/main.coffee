@@ -1,5 +1,6 @@
 angular.module('flipflops.content.home', [
     'ui.router'
+    'flipflops.content.home.controller'
     'content.home.template'
 ]).config (
     $stateProvider
@@ -7,4 +8,5 @@ angular.module('flipflops.content.home', [
     $stateProvider
     .state 'home',
         url: '/'
+        controller: 'HomeCtrl'
         templateUrl: 'content/home'

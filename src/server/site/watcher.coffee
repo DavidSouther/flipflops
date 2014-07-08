@@ -21,6 +21,7 @@ class SiteWatcher extends AssetWatcher
         [
             "**/index.markdown"
             "**/index.md"
+            "README.md"
         ]
 
     matches: (path)-> path in ['/site.json']
@@ -64,6 +65,7 @@ class SiteWatcher extends AssetWatcher
         _
 
     parseTitle: (path)->
+        return 'Home' if path is '/README.md'
         sep = '/'
         prefixLen = 1
         index = path.indexOf '/index.m'

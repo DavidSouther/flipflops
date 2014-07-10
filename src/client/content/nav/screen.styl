@@ -1,0 +1,35 @@
+footer.PageNav
+    display flex
+    flex-direction row
+    justify-content space-around
+
+@media(min-width: 77em)
+    footer.PageNav
+        display block
+
+        a
+            position absolute
+            top 0
+            height 100%
+            width 1.5em
+            background #eee
+
+            &:hover
+                background #bbb
+
+            ._twist
+                display block
+
+            &._previous
+                left 0
+                border-radius 10px 0 0 10px
+
+                ._twist
+                    transform rotate(-90deg) translate(-5em)
+
+            &._next
+                right 0
+                border-radius 0 10px 10px 0
+
+                ._twist
+                 transform rotate(90deg) translate(3em)

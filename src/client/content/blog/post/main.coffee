@@ -5,6 +5,6 @@ angular.module('flipflops.content.blog.post', [
 ]).config ($stateProvider)->
     $stateProvider
     .state 'blog.post',
-        url: '/posts/*blogPath'
+        url: '/posts/*path'
         controller: 'BlogPostCtrl'
         templateUrl: 'content/blog/post'

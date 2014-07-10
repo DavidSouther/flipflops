@@ -4,5 +4,5 @@
             a(ui-sref="blog.list") All Posts
         li(ng-repeat="path in site.index.chapters")
             a(
-                ui-sref="page({pagePath:site.link(path)})"
+                ui-sref="page({path:site.link(path)})"
             ) {{ site.files[path].front.title }}

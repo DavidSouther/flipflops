@@ -2,6 +2,7 @@ angular.module('flipflops.content', [
     'flipflops.content.home'
     'flipflops.content.blog'
     'flipflops.content.pages'
+    'flipflops.content.nav'
     'ngAnimate'
 ]).run ($document, $rootScope)->
     # $document.bind 'keypress', (ev)->

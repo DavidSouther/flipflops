@@ -4,21 +4,13 @@ angular.module('flipflops.content.pages.controller', [
     'flipflops.renderer'
 ]).controller 'PageCtrl', ($scope, Site, $stateParams, Renderer, $sce, $state)->
     Site.loaded.then ->
-        file = Site.find $stateParams.pagePath
+        file = Site.find $stateParams.path
         $scope.front = file.front
 
         link file
 
         Renderer.render(file.body).then (content)->
             $scope.content = $sce.trustAsHtml content
-
-        $scope.$on 'NEXT!', ->
-            if $scope.next
-                console.log 'Going next'
-                $state.go 'page', {pagePath: Site.link $scope.next.path}
-        $scope.$on 'PREVIOUS!', ->
-            if $scope.previous
-                $state.go 'page', {pagePath: Site.link $scope.previous.path}
 
     link = (file)->
         index = Site.index.pages.indexOf file.path

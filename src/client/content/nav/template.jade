@@ -1,0 +1,11 @@
+footer.PageNav
+    a._previous(
+        href="{{ srefize(previous.path) }}"
+        ng-show="previous"
+    )
+        span._twist Previous
+    a._next(
+        href="{{ srefize(next.path) }}"
+        ng-show="next"
+    )
+        span._twist Next

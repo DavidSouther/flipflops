@@ -5,6 +5,6 @@ angular.module('flipflops.content.pages', [
 ]).config ($stateProvider)->
     $stateProvider.state
         name: 'page'
-        url: '/*pagePath'
+        url: '/*path'
         controller: 'PageCtrl'
         templateUrl: 'content/pages'

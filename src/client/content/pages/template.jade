@@ -4,14 +4,8 @@ article
 
     div(ng-bind-html="content")
 
-    footer
-        a._previous(
-            ui-sref="page({pagePath: site.link(previous.path)})"
-            ng-show="previous"
-        )
-            span._twist Previous
-        a._next(
-            ui-sref="page({pagePath: site.link(next.path)})"
-            ng-show="next"
-        )
-            span._twist Next
+    content-nav(
+        content-state="'page'"
+        content-previous="previous"
+        content-next="next"
+    )

@@ -13,4 +13,5 @@ angular.module('flipflops', [
     $locationProvider
 )->
     $locationProvider.html5Mode true # TODO hide behind flag.
-    $urlRouterProvider.otherwise '/'
+    $urlRouterProvider.otherwise '/01_layout'
+

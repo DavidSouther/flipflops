@@ -9,12 +9,8 @@ article
 
     div(ng-bind-html="content")
 
-    footer
-        a._previous(
-            ui-sref="blog.post({blogPath: site.link(previous.path)})"
-            ng-show="previous"
-        ) Previous
-        a._next(
-            ui-sref="blog.post({blogPath: site.link(next.path)})"
-            ng-show="next"
-        ) Next
+    content-nav(
+        content-state="'blog.post'"
+        content-previous="previous"
+        content-next="next"
+    )

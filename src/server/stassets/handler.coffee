@@ -1,6 +1,14 @@
 Path = require "path"
 config = require '../config'
-root = [Path.join global.root, 'src', 'client']
+
+root = []
+unless config.defaultTheme is no
+    root.push Path.join global.root, 'src', 'client'
+if config.themes
+    for theme in config.themes
+        root.push Path.join config.source, 'themes', theme
+
+console.log root
 
 vendors =
     prefix: Path.join global.root, 'bower_components'

@@ -1,6 +1,6 @@
 Path = require "path"
 config = require '../config'
-root = Path.join global.root, 'src', 'client'
+root = [Path.join global.root, 'src', 'client']
 
 vendors =
     prefix: Path.join global.root, 'bower_components'

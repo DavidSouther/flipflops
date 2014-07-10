@@ -3,9 +3,9 @@ yaml = require 'js-yaml'
 
 class SiteWatcher extends AssetWatcher
     constructor: (@config)->
-        @config.root = @config.source = require('path').normalize(
+        @config.root = @config.source = [
             @config.source or "#{__dirname}/../../site"
-        )
+        ]
 
         @config.moreSep = '<!-- more -->'
 

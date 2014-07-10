@@ -2,6 +2,6 @@ div.PostList
     h2 Posts List
     section(ng-repeat="post in site.posts | orderBy:'front.date':true")
         h3
-            a(ui-sref="blog.post({blogPath: site.link(post.path)})")
+            a(ui-sref="blog.post({path: site.link(post.path)})")
                 | {{ post.front.title }}
             time {{ post.front.date | date:short }}

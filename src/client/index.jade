@@ -20,17 +20,7 @@ html(lang='en', ng-app='flipflops', ng-controller="Site")
     script(src="/vendors.js")
 
   body
-    header(role="banner")
-        ff-header
-    main(role="main")
-        section.Content
-          ui-view
-        nav(role="navigation")
-            ff-navigation
-        aside(role="complementary")
-            ff-sidebar
-    footer(role="contentinfo")
-        ff-footer
+    ff-page
 
     script(src="/templates.js")
     script(src="/app.js")

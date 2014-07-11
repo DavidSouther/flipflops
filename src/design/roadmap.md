@@ -32,13 +32,15 @@
 * [ ] Discovers and loads plugins.
 * [ ] Allows plugins to hook to the app router.
 * [ ] Allows plugins to apply passes to the content tree.
+* [ ] Load metadata from git plugin.
 
 ### Daiquiri
 
-* [ ] Loads additional modules at run time.
+* [X] Loads additional modules at run time.
 * [ ] Modules wrap factories (`angular.decorator()`).
-* [ ] Modules replace templates.
-* [ ] Modules override CSS.
+* [X] Modules replace templates.
+* [X] Modules override CSS.
+* [X] Twitter, Github proof of concept.
 
 ## Basic Plugins
 

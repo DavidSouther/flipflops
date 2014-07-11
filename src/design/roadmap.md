@@ -32,6 +32,7 @@
 * [ ] Discovers and loads plugins.
 * [ ] Allows plugins to hook to the app router.
 * [ ] Allows plugins to apply passes to the content tree.
+* [ ] Load metadata from git plugin.
 
 ### Daiquiri
 

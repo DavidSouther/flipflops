@@ -36,10 +36,11 @@
 
 ### Daiquiri
 
-* [ ] Loads additional modules at run time.
+* [X] Loads additional modules at run time.
 * [ ] Modules wrap factories (`angular.decorator()`).
-* [ ] Modules replace templates.
-* [ ] Modules override CSS.
+* [X] Modules replace templates.
+* [X] Modules override CSS.
+* [X] Twitter, Github proof of concept.
 
 ## Basic Plugins
 

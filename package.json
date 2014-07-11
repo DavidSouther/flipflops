@@ -1,6 +1,6 @@
 {
   "name": "flipflops",
-  "version": "0.1.6",
+  "version": "0.1.7",
   "description": "Flip Flops: Quite blogging, go to the beach.",
   "bin": {
     "flipflops": "./src/cli/flipflops.js"

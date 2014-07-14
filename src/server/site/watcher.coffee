@@ -3,9 +3,9 @@ yaml = require 'js-yaml'
 
 class SiteWatcher extends AssetWatcher
     constructor: (@config)->
-        @config.root = @config.source = [
-            @config.source or "#{__dirname}/../../site"
-        ]
+        unless @config.source instanceof Array
+            @config.source = [ @config.source ]
+        @config.root = @config.source
 
         @config.moreSep = '<!-- more -->'
 
@@ -14,14 +14,13 @@ class SiteWatcher extends AssetWatcher
         site.subtitle = site.subtitle or 'Go to the beach.'
         site.author = site.author or "#{site.title} Admin"
 
-
         super()
 
     pattern: ->
-        [
+        super [
             "**/index.markdown"
             "**/index.md"
-            "README.md"
+            "**/README.md"
         ]
 
     matches: (path)-> path in ['/site.json']
@@ -29,7 +28,7 @@ class SiteWatcher extends AssetWatcher
 
     render: (_, filename)->
         obj = {}
-        filename = filename.replace(@config.source, '')
+        filename = @pathpart filename
         obj[filename] = @configFile @parseFile _, filename
         obj
 

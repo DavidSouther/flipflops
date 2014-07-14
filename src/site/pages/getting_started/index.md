@@ -30,8 +30,8 @@ config, etc. Feel free to commit it to source control!
 ### Start the Server
 
 `flipflops serve` in the local directory will get you running. It should start
-on `http://127.0.0.1:1024`, unless 1024 is unavailable. Wherever it starts, it
-will print out the root URL.
+on [`http://127.0.0.1:1024`](http://127.0.0.1:1024), unless 1024 is unavailable.
+Wherever it starts, it will print out the root URL.
 
 ## Creating Content
 
@@ -62,7 +62,7 @@ Sidebar. In fact, that's the best way to choose what sidebar components you want
 for your site. Within your theme, create `page/sidebar/template.jade' and fill
 it with
 
-```jade
+```
 .Sidebar
     section
         h3 Custom Sidebar

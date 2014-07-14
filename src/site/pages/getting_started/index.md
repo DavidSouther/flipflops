@@ -4,7 +4,7 @@ title: Getting Started
 
 ## Quickstart
 
-```
+```bash
 npm install --global flipflops
 mkdir myproject
 cd myproject
@@ -30,8 +30,8 @@ config, etc. Feel free to commit it to source control!
 ### Start the Server
 
 `flipflops serve` in the local directory will get you running. It should start
-on [`http://127.0.0.1:1024`](http://127.0.0.1:1024), unless 1024 is unavailable.
-Wherever it starts, it will print out the root URL.
+on `http://127.0.0.1:1024`, unless 1024 is unavailable. Wherever it starts, it
+will print out the root URL.
 
 ## Creating Content
 
@@ -54,12 +54,27 @@ portions of the FlipFlops system. To use themes, create a folder `themes` next
 to the config file. Create a folder within `themes` with each theme name. Add
 a configuration key named 'themes' to the config file; it's value is an array,
 with themes listed in order of least priority. Within the theme, create a folder
-structure mirroring the overriden parts of the default theme. See the github for
+structure mirroring the overridden parts of the default theme. See the github for
 the current theme structure.
 
+Let's build a new theme called `quickstart`.
+
+```bash
+mkdir -p 'themes/quickstart/page/sidebar'
+touch 'themes/quickstart/page/sidebar/template.jade'
+```
+
+In `config.js`, add the `themes` key with `quickstart`.
+
+```javascript
+module.exports = {
+    //...
+    themes = [ 'quickstart' ]
+};
+```
 The easiest theme to build is replacing a main piece of the page, say the
 Sidebar. In fact, that's the best way to choose what sidebar components you want
-for your site. Within your theme, create `page/sidebar/template.jade' and fill
+for your site. Within your theme, create `page/sidebar/template.jade` and fill
 it with
 
 ```

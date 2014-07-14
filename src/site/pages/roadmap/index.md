@@ -52,10 +52,12 @@ title: Roadmap
 
 ### Daiquiri
 
-* [ ] Analytics plugin - google analytics
+* [ ] Analytics plugin
+    * [ ] Google Analytics
+    * [ ] segment.io
 * [ ] Navigation Plugin - highly configurable and extensible menu.
-* [ ] Markdown plugin - pull article rendering to a plugin.
-* [ ] Code rendering - Render code blocks.
+* [X] Markdown plugin - pull article rendering to a plugin.
+* [X] Code rendering - Render code blocks.
 * [ ] Jade rendering - allow content to be rendered as jade.
 * [ ] Gist Embedding
 
@@ -63,13 +65,23 @@ title: Roadmap
 
 ### Mojito
 
-* [ ] SEO Plugin - render the page in PhantomJS.
+* [ ] SEO Plugin (Render the page in PhantomJS)
 
 ### Daiquiri
 
-* [ ] Sidebar Plugins - stack overflow, Github
-* [ ] Ads plugins - google adwords.
-* [ ] Social plugins - twitter, facebook, g+
+* [ ] Sidebar Plugins
+    * [ ] Stack overflow
+    * [ ] Github
+        * [ ] User
+        * [ ] Repo
+    * [ ] Twitter
+* [ ] Ads plugins
+    * [ ] Google Adwords
+
+* [ ] Social plugins
+    * [ ] Twitter Tweet
+    * [ ] Facebook Like
+    * [ ] g+
 
 ## Content Management
 
@@ -84,4 +96,8 @@ title: Roadmap
 * [ ] Hackathon
 * [ ] Site
 * [ ] Documentation
+    * [ ] Themes
+    * [ ] Layouts
+    * [ ] Plugins
+    * [ ] CLI
 * [ ] Success Stories

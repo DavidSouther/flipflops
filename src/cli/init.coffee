@@ -1,7 +1,9 @@
-readline = require 'readline'
 Q = require 'q'
 fs = require 'fs'
+Path = require 'path'
+mkdirp = Q.denodeify require 'mkdirp'
 
+readline = require 'readline'
 rl = readline.createInterface({
     input: process.stdin
     output: process.stdout
@@ -19,6 +21,8 @@ config =
     author: 'Nemo'
     copyright: (new Date()).getYear()
 
+path = "#{process.env.CONFIG_FILE}.js"
+
 module.exports = ->
     Q(yes)
     .then(->question 'What is the site title? ')
@@ -30,7 +34,6 @@ module.exports = ->
     .then(->question 'When is the site copyright? ')
     .then((_)->config.copyright = _ or config.copyright)
     .then ->
-        path = "#{process.env.CONFIG_FILE}.js"
         content = """
 module.exports = {
     source: __dirname,
@@ -45,7 +48,11 @@ module.exports = {
         console.log 'Writing output', config
 
         fs.writeFileSync path, content
-
     .then(->console.log 'Config written!')
+    .then ->
+        directory = Path.dirname path
+        mkdirp "#{directory}/posts"
+        mkdirp "#{directory}/pages"
+    .then(-> console.log 'Directories created!')
     .then(-> rl.close())
     .catch((_)-> console.log "There was an error!", _)

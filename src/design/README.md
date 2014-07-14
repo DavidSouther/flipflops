@@ -49,4 +49,11 @@ relation to the Yahoo HTML5 library.)
 
 Daiquiri is an AngularJS SPA publishing application. From a core module that
 handles communication with mojito, various modules can add and override any
-piece of the page and experience.
+piece of the page and experience. This is handled with a cascading file system.
+When flipflops starts, it has a list of directories to watch. Each file in a
+directory with less priority can be overriden by a file with the same path in a
+directory with higher priority. Effectively, this means that users can replace
+just the pieces of the app (stylesheets, templates, or even scripts) they need
+for their behavior. There are some pieces that are considered the core kernel,
+which include the app start up and site data model, that should probably not be
+overridden.

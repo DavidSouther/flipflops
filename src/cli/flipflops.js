@@ -10,7 +10,7 @@ function help(){
     console.log('\tflipflops serve [configpath]');
     console.log('\tflipflops render [configpath] <outdir>');
     console.log('\tflipflops init [configpath]');
-    console.log('\tflipflops create post [configpath]');
+    console.log('\tflipflops create [post|page] [configpath]');
 }
 
 if(process.argv.length < 3){
@@ -23,13 +23,14 @@ var command = process.argv[2] || 'serve';
 console.log('Command is', command);
 
 var configArg = 3;
-if(command === 'create'){
+if(command === 'create' || command === 'new'){
     configArg = 4;
 } else if(command === 'render' && process.argv.length === 4){
     configArg = -1;
 }
 
-process.env.CONFIG_FILE = process.env.CONFIG_FILE ||
+process.env.CONFIG_FILE =
+    process.env.CONFIG_FILE ||
     process.argv[configArg] ||
     process.cwd() + '/config';
 
@@ -51,6 +52,10 @@ switch(command){
     case 'init':
         console.log('Initializing site...');
         require('./init')();
+        break;
+    case 'new':
+        console.log('Creating new asset...');
+        require('./create')(process.argv[3]);
         break;
     default:
         throw new Error('Invalid command: ' + command);

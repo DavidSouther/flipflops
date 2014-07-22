@@ -1,8 +1,10 @@
 angular.module('flipflops.content.home.controller', [
     'flipflops.site'
     'flipflops.renderer'
-]).controller 'HomeCtrl', ($scope, Site, Renderer, $sce)->
+    'flipflops.layout.service'
+]).controller 'HomeCtrl', ($scope, Site, Renderer, $sce, LayoutSvc)->
     $scope.content = ''
+    LayoutSvc.setActiveLayout 'home'
     path = "/README.md"
     Site.loaded.then ->
         file = Site.find path

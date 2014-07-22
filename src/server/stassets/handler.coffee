@@ -8,8 +8,6 @@ if config.themes
     for theme in config.themes
         root.push Path.join config.source, 'themes', theme
 
-console.log root
-
 vendors =
     prefix: Path.join global.root, 'bower_components'
     js: [

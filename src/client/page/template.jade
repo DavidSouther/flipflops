@@ -1,12 +1,1 @@
-div.Page
-    header(role="banner")
-        ff-header
-    main(role="main")
-        section.Content
-          ui-view
-        nav(role="navigation")
-            ff-navigation
-        aside(role="complementary")
-            ff-sidebar
-    footer(role="contentinfo")
-        ff-footer
+ng-include(src='"layouts/" + layouts.active')

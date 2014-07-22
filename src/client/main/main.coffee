@@ -1,6 +1,7 @@
 angular.module('flipflops', [
     'ui.router'
     'flipflops.page'
+    'flipflops.admin'
 ]).config (
     $urlRouterProvider
     $locationProvider

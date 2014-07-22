@@ -2,10 +2,20 @@ angular.module('flipflops.content.pages.controller', [
     'ui.router'
     'flipflops.site'
     'flipflops.renderer'
-]).controller 'PageCtrl', ($scope, Site, $stateParams, Renderer, $sce, $state)->
+]).controller 'PageCtrl', (
+    $scope
+    LayoutSvc
+    Site
+    $state
+    $stateParams
+    Renderer
+    $sce
+)->
     Site.loaded.then ->
         file = Site.find $stateParams.path
         $scope.front = file.front
+
+        LayoutSvc.setActiveLayout $scope.front.layout
 
         link file
 

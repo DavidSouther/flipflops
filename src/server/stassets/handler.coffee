@@ -1,19 +1,13 @@
 Path = require "path"
 config = require '../config'
-
-root = []
-unless config.defaultTheme is no
-    root.push Path.join global.root, 'src', 'client'
-if config.themes
-    for theme in config.themes
-        root.push Path.join config.source, 'themes', theme
+root = config.root
 
 vendors =
     prefix: Path.join global.root, 'bower_components'
     js: [
         'angular/angular.js'
         'angular-ui-router/release/angular-ui-router.js'
-        # 'angular-cookies/angular-cookies.js'
+        'angular-cookies/angular-cookies.js'
         # 'angular-resource/angular-resource.js'
         'angular-sanitize/angular-sanitize.js'
         'angular-animate/angular-animate.js'

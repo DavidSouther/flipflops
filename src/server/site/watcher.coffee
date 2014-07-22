@@ -3,6 +3,7 @@ yaml = require 'js-yaml'
 
 class SiteWatcher extends AssetWatcher
     constructor: (@config)->
+        @config = JSON.parse JSON.stringify @config
         unless @config.source instanceof Array
             @config.source = [ @config.source ]
         @config.root = @config.source

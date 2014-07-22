@@ -6,7 +6,7 @@ angular.module('flipflops.page.directive', [
     'flipflops.page.footer.directive'
 
     'flipflops.content'
-    'flipflops.layout.service'
+    'flipflops.page.layout.service'
 
     'page.template'
     'flipflops.layouts.templates'

@@ -1,22 +1,15 @@
-config = require '../config'
 Path = require 'path'
 TemplateWatcher = require 'stassets/lib/Watchers/Template'
-
-root = [Path.join global.root, 'src', 'client', 'layouts']
-root.concat config.layouts if config.layouts
+AssetWatcher = require 'stassets/lib/Watchers/Asset'
 
 class LayoutWatcher extends TemplateWatcher
     constructor: (@config)->
         @config = JSON.parse JSON.stringify @config
-        @config.root = root
         super(@config)
 
-    pattern: ->
-        super [
-            "layouts/**/template.jade"
-        ]
+    pattern: -> AssetWatcher::pattern.call @, [ "**/layout.jade" ]
     matches: (path)-> path in ['/layouts.js']
-    getShortPath: (path)-> "layouts/#{super(path)}"
+    getShortPath: (path)-> super(path).replace(/\/layout$/, '')
     getModuleName: (shortPath)-> 'flipflops.layouts.templates'
     wrap: (path, content)->
         shortPath = @getShortPath path
@@ -25,9 +18,10 @@ class LayoutWatcher extends TemplateWatcher
         """
         angular.module('#{module}')
         .run(function($templateCache){
-            $templateCache.put('#{shortPath}', '#{@escapeContent(content)}');
+            $templateCache.put('/#{shortPath}', '#{@escapeContent(content)}');
         });
         """
+
     concat: (_)->
         _.unshift "angular.module('#{@getModuleName()}', []);\n"
         _.join('\n')

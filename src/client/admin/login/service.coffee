@@ -1,5 +1,5 @@
 class Authentication
-    constructor: (@$cookies, @$http, @$location)->
+    constructor: (@$cookies, @$http, @$state)->
         @check()
         @user =
             username: ''
@@ -7,20 +7,20 @@ class Authentication
 
     check: ->
         # Evaluate for its $cookies side effects
-        @$http.get('/auth/check')
+        # @$http.get('/auth/check')
 
     isLoggedIn: ->
         @$cookies.li? and @$cookies.li isnt 0
 
     login: ->
         @$http
-        .post('/auth/login/local', @user)
-        .success => @$location.url '/'
+        .post('/auth/login/file', @user)
+        .success => @$state.go 'admin'
 
 Authentication.$inject = [
     '$cookies'
     '$http'
-    '$location'
+    '$state'
 ]
 
 angular.module('flipflops.admin.login.service', [

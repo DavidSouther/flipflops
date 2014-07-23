@@ -4,6 +4,7 @@ routers = (app)->
         'site'
         'layouts'
         'static'
+        'authentication'
     ].forEach (api)->
         require("./#{api}/route")(app)
 

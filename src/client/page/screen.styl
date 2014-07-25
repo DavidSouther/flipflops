@@ -1,24 +1,35 @@
+$col = $screen-sm-max / 3
+
 .Page
     > main[role="main"]
         display flex
         flex-direction column
 
-        // > section.Content
-
         > nav[role="navigation"]
             order -1
 
-        // > aside[role="complementary"]
-
-    @media(min-width 64em)
-        > main[role="main"]
-            flex-direction row
+        @media ( min-width: $screen-lg-min )
+            flex-flow row wrap
             justify-content space-around
-            flex 1
 
             > section.Content
-                max-width 32em
-                flex 1
+                flex $screen-sm-max
+                max-width $screen-sm-max
 
             > nav[role="navigation"], > aside[role="complementary"]
-                flex 0 0 16em
+                flex 0 0 ( $screen-sm-max / 3 )
+
+        @media ( max-width: 3 * $col )
+            > section.Content
+                flex 2 * $col
+                max-width 2 * $col
+
+        @media ( max-width: $screen-lg-max )
+            > aside[role="complementary"]
+                clear both
+
+        @media ( max-width: $screen-sm-max )
+            padding 0 1em
+
+            > nav[role="navigation"]
+                order 0

@@ -27,6 +27,11 @@ vendors =
         'highlightjs/styles/tomorrow.css'
     ]
 
+    stylus: [
+        'bootstrap/dist/css/bootstrap.css'
+        'bootstrap/dist/css/bootstrap-theme.css'
+    ]
+
 st = require('stassets')({
     root
     vendors

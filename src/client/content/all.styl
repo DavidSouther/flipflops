@@ -7,15 +7,12 @@ section.Content
     ui-view
         display block
         position relative
-        height 100%
-        width 100%
         opacity 1
         background #FFFFFE
 
         article
-            height 100%
 
-            headerb
+            header
                 p
                     &:before
                         font-style italic
@@ -33,10 +30,3 @@ section.Content
                 ._author
                     &:before
                         content: 'By: ';
-
-@media(min-width: 77em)
-    section.Content
-        max-width 45em !important
-
-        article
-            padding 2em

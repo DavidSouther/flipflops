@@ -1,11 +1,17 @@
 .Header
     padding 0 2em
+    display flex
+    justify-content space-between
+    align-items baseline
     color white
     background-color black
     font-family 'Quattrocento', serif
 
+    @media ( max-width $screen-sm-max )
+        flex-direction column
+
     h1
-        display inline-block
+        margin 0
         letter-spacing 0.5
 
         a
@@ -13,10 +19,8 @@
             text-decoration none
 
     h2
-        display inline-block
+        margin 0
         letter-spacing 0.2
 
-@media(min-width: 32em)
-    .Header
-        h2
-            float right
+        @media ( max-width: $screen-sm-max )
+            display none

@@ -7,8 +7,5 @@ angular.module('flipflops.content.nav.directive', [
     scope:
         'next': '=contentNext'
         'previous': '=contentPrevious'
-        'state': '=contentState'
     controller: 'ContentNavCtrl'
     templateUrl: 'content/nav'
-    link: ($scope, $element, $attributes)->
-        

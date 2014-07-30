@@ -2,7 +2,7 @@ angular.module('flipflops.content.pages.controller', [
     'ui.router'
     'flipflops.site'
     'flipflops.renderer'
-]).controller 'PageCtrl', (
+]).controller 'ContentPageCtrl', (
     $scope
     LayoutSvc
     Site

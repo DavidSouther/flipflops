@@ -1,11 +1,9 @@
-article.Page
-    header
-        h2 {{front.title}}
+ff-content(
+    nav="nav"
+    type="'Page'"
+)
+    ._page._content
+        header
+            h2 {{front.title}}
 
-    div(ng-bind-html="content")
-
-    content-nav(
-        content-state="'page'"
-        content-previous="previous"
-        content-next="next"
-    )
+        div(ng-bind-html="content")

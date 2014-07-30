@@ -5,6 +5,8 @@ angular.module('flipflops.page.directive', [
     'flipflops.page.sidebar.directive'
     'flipflops.page.footer.directive'
 
+    'flipflops.content.nav.flipper.directive'
+    
     'flipflops.content'
     'flipflops.page.layout.service'
 

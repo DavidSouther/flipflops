@@ -1,5 +1,6 @@
-div.PostList
-    h2 Posts List
+article.PostList
+    header
+        h2 Posts List
     section(ng-repeat="post in site.posts | orderBy:'front.date':true")
         h3
             a(ui-sref="blog.post({path: site.link(post.path)})")

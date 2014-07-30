@@ -1,4 +1,4 @@
-article
+article.Post
     header
         h2 {{front.title}}
         p._publish-date
@@ -7,7 +7,7 @@ article
         p Categories:
             span(ng-repeat="cat in front.categories") &nbsp;{{ cat }}
 
-    div(ng-bind-html="content")
+    section._content(ng-bind-html="content")
 
     content-nav(
         content-state="'blog.post'"

@@ -1,7 +1,7 @@
 angular.module('flipflops.content.nav.controller', [
     'ui.router'
     'flipflops.site'
-]).controller 'ContentNavCtrl', ($scope, $state, Site)->
+]).controller 'ContentNavCtrl', ($scope, $rootScope, $state, Site)->
     $scope.srefize = (where)->
         return '' unless where
         $state.href where.state, {path: Site.link where.path}
@@ -11,3 +11,7 @@ angular.module('flipflops.content.nav.controller', [
         go $scope.previous if $scope.previous
     go = (where)->
         $state.go where.state, {path: Site.link where.path}
+    $scope.goNext = ->
+        $rootScope.$broadcast 'NEXT!'
+    $scope.goPrevious = ->
+        $rootScope.$broadcast 'PREVIOUS!'

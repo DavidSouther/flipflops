@@ -2,10 +2,12 @@ footer.PageNav
     a._previous(
         href="{{ srefize(previous) }}"
         ng-show="previous"
+        ng-click="goPrevious()"
     )
         span._twist Previous
     a._next(
         href="{{ srefize(next) }}"
         ng-show="next"
+        ng-click="goNext()"
     )
         span._twist Next

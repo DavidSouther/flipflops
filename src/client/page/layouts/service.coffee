@@ -9,5 +9,5 @@ class LayoutSvc
         # @active = layout
 
 angular.module('flipflops.page.layout.service', [
-
+    'flipflops.content.nav.directive'
 ]).service 'LayoutSvc', LayoutSvc

@@ -19,6 +19,9 @@ angular.module('flipflops.content.pages.controller', [
 
     $scope.nav = {}
     index = Site.index.pages.indexOf file.path
+    if index is 0
+        $scope.nav.previous = Site.files['/README.md']
+        $scope.nav.previous.state = 'home'
     if index > 0
         $scope.nav.previous = Site.files[Site.index.pages[index - 1]]
         $scope.nav.previous.state = 'page'

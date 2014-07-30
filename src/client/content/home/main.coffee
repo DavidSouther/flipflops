@@ -10,3 +10,5 @@ angular.module('flipflops.content.home', [
         url: '/'
         controller: 'HomeCtrl'
         templateUrl: 'content/home'
+        resolve:
+            loaded: ['Site', (_)-> _.loaded]

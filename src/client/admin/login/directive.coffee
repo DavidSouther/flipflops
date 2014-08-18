@@ -9,13 +9,13 @@ angular.module('flipflops.admin.login.directive', [
         url: '/login/'
         template: '<login></login>'
 
-.run ($rootScope, $state, AuthSvc)->
-    loginRedirect = ->
-        if $state.includes 'admin'
-            unless AuthSvc.isLoggedIn() or $state.is('login')
-                $state.go('login')
-    $rootScope.$on '$locationChangeSuccess', loginRedirect
-    loginRedirect()
+# .run ($rootScope, $state, AuthSvc)->
+#     loginRedirect = ->
+#         if $state.includes 'admin'
+#             unless AuthSvc.isLoggedIn() or $state.is('login')
+#                 $state.go('login')
+#     $rootScope.$on '$locationChangeSuccess', loginRedirect
+#     loginRedirect()
 
 .directive 'login', ->
     restrict: 'AE'

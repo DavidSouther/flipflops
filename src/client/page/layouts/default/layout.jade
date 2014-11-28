@@ -1,12 +1,26 @@
-div.Page
-    header(role="banner")
-        ff-header
-    main(role="main")
-        section.Content
-          ui-view.NavFlipper
-        nav(role="navigation")
+div(layout="row" layout-fill)
+    md-sidenav.md-sidenav-left.md-whiteframe-z2(
+        md-component-id="navigation"
+        md-is-locked-open="$media('md')"
+    )
+        md-toolbar(layout="row")
+            md-button(ng-click="closeNav()" hide-sm) C
+            h2 Navigation
+        md-content.md-padding
+            //- Close Button
             ff-navigation
-        aside(role="complementary")
+    div(layout="column" flex)
+        md-toolbar(md-scroll-shrink)
+            ff-header
+        md-content.md-padding(flex)
+            ui-view
+        footer
+            ff-footer
+    md-sidenav.md-sidenav-right.md-whiteframe-z2(
+        md-component-id="sidebar"
+    )
+        md-toolbar
+            h2 Sidebar
+        md-content.md-padding
+            //- Close Button
             ff-sidebar
-    footer(role="contentinfo")
-        ff-footer

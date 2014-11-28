@@ -29,8 +29,8 @@ layout engine is very similar to Wordpress, which breaks the fundamental rule
 of HTML: Every Opened Tag Must Close (in the same file).
 
 * **Ghost** requires a MySQL database to use. It can't be deployed just
-* anywhere. Multi-user is still on the horizon (in FlipFlops, as easy as
-* changing the Author metadata). Plugin support is on the horizon. Not a SPA.
+anywhere. Multi-user is still on the horizon (in FlipFlops, as easy as changing
+the Author metadata). Plugin support is on the horizon. Not a SPA.
 
 ## Components
 

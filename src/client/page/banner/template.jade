@@ -1,6 +1,10 @@
 hgroup.Header
-    h1
-        a(ui-sref="home")
-            | {{ site.title }}
-    h2(ng-show="site.subtitle")
-        | {{ site.subtitle }}
+    div(layout="row" layout-sm="column" layout-align="space-between center")
+        div(layout="row")
+            md-button(ng-click="toggleNav()" hide-gt-sm)
+                | n
+            h1
+                md-button(ui-sref="home")
+                    | {{ site.title }}
+        h2(ng-show="site.subtitle")
+            | {{ site.subtitle }}

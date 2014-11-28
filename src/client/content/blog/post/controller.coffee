@@ -17,7 +17,7 @@ angular.module('flipflops.content.blog.post.controller', [
         file = Site.find path
         $scope.front = file.front
 
-        $rootScope.emit $scope.front.layout or 'default'
+        $rootScope.$emit $scope.front.layout or 'default'
 
         file.front.date = new Date file.front.date
 

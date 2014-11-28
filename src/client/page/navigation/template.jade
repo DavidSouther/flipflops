@@ -1,8 +1,9 @@
-.Navigation
-    ul
-        li(ng-show="site.posts.length > 0")
-            a(ui-sref="blog.list") All Posts
-        li(ng-repeat="path in site.index.chapters")
-            a(
-                ui-sref="page({path:site.link(path)})"
+md-list
+    md-item(ng-show="site.posts.length > 0")
+        md-item-content
+            md-button(ui-sref="blog.list") All Posts
+    md-item(ng-repeat="path in site.index.chapters")
+        md-item-content
+            md-button(
+                ui-sref="page({path: site.link(path)})"
             ) {{ site.files[path].front.title }}

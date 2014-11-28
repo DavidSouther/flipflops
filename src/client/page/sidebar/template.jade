@@ -1,5 +1,5 @@
-.Sidebar
-    section
+md-list
+    md-item
         h3 $state.$current
         dl
             dt name
@@ -8,6 +8,6 @@
             dt url
             dd
                 pre {{$state.$current.url.source}}
-    section
+    md-item
         h3 $stateParams
         pre {{ $stateParams }}

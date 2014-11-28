@@ -9,3 +9,4 @@ angular.module('flipflops.page.navigation.directive', [
         $scope.site = Site
         $scope.isPost = (_)->
             _.indexOf('/posts/') is 0
+        $scope.go = ->

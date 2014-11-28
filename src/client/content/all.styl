@@ -1,32 +1,28 @@
-section.Content
-    // font-size 16pt
-    text-align justify
-    overflow hidden
-    border-radius 15px
+// ui-view
+//     display block
+//     position relative
+//     opacity 1
+//     background #FFFFFE
+ff-content
+    article
+        max-width 35em
+        margin 0 auto
 
-    ui-view
-        display block
-        position relative
-        opacity 1
-        background #FFFFFE
-
-        article
-
-            header
-                p
-                    &:before
-                        font-style italic
-                        color grey
-
-                ._publish-date
+        header
+            p
+                &:before
+                    font-style italic
                     color grey
-                    float right
-                    margin 0
 
-                    &:before
-                        content 'Posted: '
-                        font-style italic
+            ._publish-date
+                color grey
+                float right
+                margin 0
 
-                ._author
-                    &:before
-                        content: 'By: ';
+                &:before
+                    content 'Posted: '
+                    font-style italic
+
+            ._author
+                &:before
+                    content: 'By: ';

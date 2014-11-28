@@ -1,6 +1,10 @@
-if(process.env.NEW_RELIC_LICENSE_KEY){
-    require('newrelic');
+global.root = __dirname;
+
+var config = require('./server.json');
+config.name = require('./package.json').name;
+
+module.exports = require('rupert')(config); // Export for use by tools
+
+if (require.main === module) {
+    module.exports.start(function(){});
 }
-require('coffee-script');
-require('coffee-script/register');
-require('./src/server/server').start();

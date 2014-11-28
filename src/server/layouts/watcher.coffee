@@ -9,21 +9,21 @@ class LayoutWatcher extends TemplateWatcher
 
     pattern: -> AssetWatcher::pattern.call @, [ "**/layout.jade" ]
     matches: (path)-> path in ['/layouts.js']
-    getShortPath: (path)-> super(path).replace(/\/layout$/, '')
+    getShortPath: (path)-> '/' + super(path).replace(/\/layout$/, '')
     getModuleName: (shortPath)-> 'flipflops.layouts.templates'
-    wrap: (path, content)->
-        shortPath = @getShortPath path
-        module = @getModuleName shortPath
 
-        """
-        angular.module('#{module}')
-        .run(function($templateCache){
-            $templateCache.put('/#{shortPath}', '#{@escapeContent(content)}');
-        });
-        """
+    wrap: (path, content, code)->
+        layout = super(path, content, code)
+        layout.content = layout.content.replace(
+            "angular.module('flipflops.layouts.templates', [])",
+            "angular.module('flipflops.layouts.templates')"
+        )
+        layout
 
     concat: (_)->
-        _.unshift "angular.module('#{@getModuleName()}', []);\n"
-        _.join('\n')
+        _.unshift
+            content: "angular.module('#{@getModuleName()}', []);\n"
+            sourceMap: null
+        super _
 
 module.exports = LayoutWatcher

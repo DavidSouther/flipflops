@@ -1,0 +1,21 @@
+{
+  "stassets": {
+    "verbose": true,
+    "root": "./src/client",
+    "vendors": {
+      "prefix": ["./bower_components"],
+      "js": [
+        "marked/lib/marked.js",
+        "highlightjs/highlight.pack.js"
+      ],
+      "css": [
+        "highlightjs/styles/tomorrow.css"
+      ]
+    }
+  },
+  "tls": false,
+  "routing": [
+    "./src/server/allow.coffee",
+    "./src/server/**/route.coffee"
+  ]
+}
